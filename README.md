@@ -1,4 +1,4 @@
-# ermengine
+# ERM Engine
 This is a code test completed by Mahendra Mohan.
 
 Project Brief:
