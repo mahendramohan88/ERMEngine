@@ -32,12 +32,12 @@ namespace ErmEngine.CsvApi.Services
 
             var fileName = Path.GetFileName(path);
 
-            if (fileName.StartsWith("LP_"))
+            if (fileName.Contains("LP_"))
             {
                 return await _lpService.GetAnomalies(path, thresholdMultiplier);
             }
 
-            if (fileName.StartsWith("TOU_"))
+            if (fileName.Contains("TOU_"))
             {
                 return await _touService.GetAnomalies(path, thresholdMultiplier);
             }

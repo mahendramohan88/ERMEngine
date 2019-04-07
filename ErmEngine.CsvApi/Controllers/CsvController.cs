@@ -14,6 +14,9 @@ namespace ErmEngine.CsvApi.Controllers
     [ApiController]
     public class CsvController : ControllerBase
     {
+        // The threshold here could be made a parameter for the query as well.
+        private const double THRESHOLD = 0.2;
+
         private readonly ICsvService _CsvService;
 
         public CsvController(ICsvService CsvService)
@@ -21,12 +24,12 @@ namespace ErmEngine.CsvApi.Controllers
             _CsvService = CsvService;
         }
 
-        [Route("api/GetSummary")]
-        public async Task<IActionResult> GetSummary(string path, double threshold)
+        [Route("api/GetSummary"), HttpPost]
+        public async Task<IActionResult> GetSummary([FromBody]string path)
         {
             try
             {
-                var anomalies = await _CsvService.GetAnomalies(path, threshold);
+                var anomalies = await _CsvService.GetAnomalies(path, THRESHOLD);
                 var result = _CsvService.CreateSummaryFromAnomalies(anomalies);
                 return Ok(result);
             }

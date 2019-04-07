@@ -13,6 +13,8 @@ namespace ErmEngine.CsvApi.Models
             Energy = energy;
         }
 
+        public TouRowItem() { }
+
         public int MeterPointCode { get; set; }
         public int SerialNumber { get; set; }
         public string PlantCode { get; set; }

@@ -13,13 +13,9 @@ namespace ErmEngine.CsvApi.Models
             DateTime = dateTime;
             DataType = dataType;
             DataValue = dataValue;
-
-            MeterPointCode = 0;
-            SerialNumber = 0;
-            PlantCode = String.Empty;
-            Units = String.Empty;
-            Status = String.Empty;
         }
+
+        public LpRowItem() { }
 
         [Name("MeterPoint Code")]
         public int MeterPointCode { get; set; }
