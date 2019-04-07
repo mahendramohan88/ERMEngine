@@ -22,3 +22,7 @@ This is a code test completed by Mahendra Mohan.
 4. If valid, you should get a list of rows outside the 20% threshold.
 
 ![Step4](/ErmEngine.CsvApi/Instructions/Step4.PNG)
+
+## Additional Notes and Troubleshooting
+
+The client console application is set to look for the API services using a localhost address. Depending on your deployment environment this will need to be changed. It is currently set to https://localhost:44382. 
